@@ -1,0 +1,7 @@
+---
+# valid options are "stable", "rc" and "nightly"
+yarn_version: stable
+yarn_packages:
+  - yarn
+# see the state parameter in the apt and yum module for valid values
+yarn_packages_state: present

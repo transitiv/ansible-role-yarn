@@ -1,0 +1,14 @@
+---
+- name: Install yarn package repository
+  yum_repository:
+    name: yarn
+    description: Yarn Repository
+    baseurl: https://dl.yarnpkg.com/rpm/
+    gpgkey: https://dl.yarnpkg.com/rpm/pubkey.gpg
+    gpgcheck: yes
+
+- name: Install yarn
+  yum:
+    name: "{{ yarn_packages|flatten }}"
+    state: "{{ yarn_packages_state }}"
+    update_cache: yes

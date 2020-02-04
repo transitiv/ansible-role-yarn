@@ -1,0 +1,19 @@
+---
+- name: Install yarn repository key
+  apt_key:
+    id: 72ECF46A56B4AD39C907BBB71646B01B86E50310
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    keyring: /etc/apt/trusted.gpg.d/yarn.gpg
+    state: present
+
+- name: Install yarn package repository
+  apt_repository:
+    repo: deb https://dl.yarnpkg.com/debian/ {{ yarn_version }} main
+    filename: yarn
+    state: present
+
+- name: Install yarn
+  apt:
+    name: "{{ yarn_packages|flatten }}"
+    state: "{{ yarn_packages_state }}"
+    update_cache: yes
