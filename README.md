@@ -1,4 +1,4 @@
-# Ansible Role: NodeSource
+# Ansible Role: Yarn
 
 [![Build Status](https://travis-ci.com/transitiv/ansible-role-yarn.svg?branch=master)](https://travis-ci.com/transitiv/ansible-role-yarn)
 
